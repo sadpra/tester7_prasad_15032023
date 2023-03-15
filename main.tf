@@ -2,6 +2,9 @@ provider "aws" {
   region  = "eu-west-1" 
   name = "DevOps-Candidate-Lambda-Role"
 }
+resource "aws_iam_role" "lambda" {
+  name = "DevOps-Candidate-Lambda-Role"
+}
 
 resource "aws_vpc" "vpc" {
   id = "vpc-0de2bfe0f5fc540e0"

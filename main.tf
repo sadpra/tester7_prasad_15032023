@@ -1,6 +1,8 @@
 provider "aws" {
   region  = "eu-west-1" 
-
+data "aws_iam_role" "lambda" {
+  name = "DevOps-Candidate-Lambda-Role"
+}
 }
 
 resource "aws_vpc" "vpc" {
@@ -88,7 +90,7 @@ resource "aws_nat_gateway" "example" {
 
 
 terraform {
-  backend "s3" {
+  backend {
     S3 Bucket: "3.devops.candidate.exam"
     Region: "eu-west-1"
     Key: "Prasad.Deshmukh"
@@ -97,6 +99,3 @@ terraform {
 
 
 
-data "aws_iam_role" "lambda" {
-  name = "DevOps-Candidate-Lambda-Role"
-}

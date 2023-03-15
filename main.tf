@@ -1,7 +1,7 @@
 provider "aws" {
   region  = "eu-west-1" 
 
-
+}
 
 resource "aws_vpc" "vpc" {
   id = "vpc-0de2bfe0f5fc540e0"

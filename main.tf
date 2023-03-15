@@ -1,11 +1,6 @@
 provider "aws" {
   region  = "eu-west-1" 
 
-data "S3" {
-    S3 Bucket: "3.devops.candidate.exam"
-    Region: "eu-west-1"
-    Key: "Prasad.Deshmukh"
-}
 
 
 resource "aws_vpc" "vpc" {
@@ -91,6 +86,14 @@ resource "aws_nat_gateway" "example" {
   depends_on = [aws_internet_gateway.gw]
 }
 
+
+terraform {
+  backend "s3" {
+    S3 Bucket: "3.devops.candidate.exam"
+    Region: "eu-west-1"
+    Key: "Prasad.Deshmukh"
+  }
+}
 
 
 
